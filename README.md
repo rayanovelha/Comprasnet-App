@@ -1,9 +1,13 @@
 
 # ComprasNet App
 
+<img src="https://github.com/RayanOvelha/Comprasnet-App/blob/master/app/src/main/res/drawable/comprasnet_mobile_white.png" width="387" height="93" />
 O ComprasNet App é uma aplicação gratuita em código aberto desenvolvida em Kotlin, com o objetivo de apresentar os dados disponibilizados pela API pública de Compras Governamentais do gov.br.
 
-<img src="https://github.com/RayanOvelha/Comprasnet-App/blob/master/app/src/main/res/drawable/comprasnet_mobile_white.png" width="586" height="140" />
+# Download ⬇ instale em um smartphone
+[Download APK](https://github.com/RayanOvelha/Comprasnet-App/releases/download/v1.0/ComprasNet_v1.0.apk)
+
+
 
 ## Resumo
 
