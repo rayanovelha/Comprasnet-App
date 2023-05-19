@@ -15,7 +15,7 @@ buildscript {
 
     dependencies {
         /** Gradle Plugin */
-        classpath 'com.android.tools.build:gradle:7.4.2'
+        classpath 'com.android.tools.build:gradle:8.0.1'
         classpath "com.google.android.libraries.mapsplatform.secrets-gradle-plugin:secrets-gradle-plugin:2.0.1"
 
         /** Kotlin Plugin */
@@ -24,11 +24,11 @@ buildscript {
         /** Dependency Injection Plugin */
         classpath "com.google.dagger:hilt-android-gradle-plugin:$hiltVersion"
 
-        def nav_version = '2.4.1'
+        def nav_version = '2.5.0'
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
 
         //serialization
-        classpath 'com.android.tools.build:gradle:7.4.2'
+        classpath 'com.android.tools.build:gradle:8.0.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "org.jetbrains.kotlin:kotlin-serialization:$kotlin_version"
         classpath "com.google.dagger:hilt-android-gradle-plugin:$dagger_version"
