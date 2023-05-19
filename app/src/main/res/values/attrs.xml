@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr format="reference"    name="primaryButtonStyle"/>
+    <attr format="reference"    name="homeButtonStyle"/>
+    <attr format="reference"    name="textButtonStyle"/>
+    <attr format="reference"    name="iconButtonStyle"/>
+    <attr format="reference"    name="viewPagerDotsStyle"/>
+    <attr format="reference"    name="subtitleStyle"/>
+    <attr format="reference"    name="titleStyle"/>
+    <attr format="reference"    name="titleStyle2"/>
+    <attr format="reference"    name="body1Style"/>
+    <attr format="reference"    name="body2Style"/>
+    <attr format="reference"    name="gradientBackground"/>
+    <attr format="reference"    name="gradientBackground90"/>
+    <attr format="reference"    name="layoutEditTextStyle"/>
+    <attr format="reference"    name="editTextLayoutStyle"/>
+    <attr format="reference"    name="progressBarLogo"/>
+</resources>

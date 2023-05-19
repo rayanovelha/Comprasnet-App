@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- cores de interface -->
+    <color name="blue_comprasnet">#3C8DBC</color>
+    <color name="blue_dark_comprasnet">#082D43</color>
+    <color name="green_total_contratos">#00BB65</color>
+    <color name="red_vencem_30dias">#E16556</color>
+    <color name="orange_vencem_30_60">#FF7701</color>
+    <color name="yellow_vencem_60_90">#F6B651</color>
+    <color name="blue_vencem_90_180">#0DCBFA</color>
+    <color name="blue_vencem_180">#0081CF</color>
+
+    <!-- cores padrões -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="dark_red_0">#870101</color>
+    <color name="dark_red_1">#FF9F0000</color>
+    <color name="dark_red_2">#C50101</color>
+    <color name="red">#FFFF0100</color>
+    <color name="light_red">#FF4C25</color>
+    <color name="dark_gray_2">#2D2F31</color>
+    <color name="dark_gray_1">#333333</color>
+    <color name="dark_gray">#FF454545</color>
+    <color name="light_gray">#FF606060</color>
+    <color name="light_gray_1">#2B2B2B</color>
+</resources>

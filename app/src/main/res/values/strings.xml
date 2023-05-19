@@ -1,0 +1,120 @@
+<resources>
+    <string name="app_name">ComprasNet</string>
+
+    /** OnBoarding **/
+    <string name="button_start">VAMOS LÁ</string>
+    <string name="text_onboarding1">Navegue pelos contratos</string>
+    <string name="text_onboarding2">Filtre os contratos desejados</string>
+    <string name="text_onboarding3">Favorite para ver depois</string>
+
+    /** Barra de Navegação **/
+    <string name="button_home">Home</string>
+    <string name="button_graphs">Gráficos</string>
+    <string name="button_map">Mapa</string>
+    <string name="button_favs">Favoritos</string>
+    <string name="button_more">Mais</string>
+    <string name="button_account">Minha Conta</string>
+
+    /** Tela Home **/
+    <string name="Home">Transparência</string>
+    <string name="field_pesquisar">Pesquisar por descrição…</string>
+    <string name="button_total_contratos">Todos os Contratos</string>
+    <string name="button_vencem_menos30">Vencem (- 30 dias)</string>
+    <string name="button_vencem_30a60">Vencem (30 a 60 dias)</string>
+    <string name="button_vencem_60a90">Vencem (60 a 90 dias)</string>
+    <string name="button_vencem_90a180">Vencem (90 a 180 dias)</string>
+    <string name="button_vencem_mais180">Vencem (+ 180 dias)</string>
+
+    /** Tela Resultados **/
+    <string name="title_results">Resultados</string>
+    <string name="field_ver">Ver</string>
+    <string name="field_favoritar">Favoritar</string>
+
+    /** Tela Detalhes **/
+    <string name="title_details">Detalhes</string>
+    <string name="rv_label">label </string>
+    <string name="rv_value">value </string>
+
+    /** Tela Filtros **/
+    <string name="title_filtro_de_pesquisa">Filtro de Pesquisa</string>
+    <string name="field_orgao">Orgão</string>
+    <string name="field_unidade_gestora">Unidade Gestora</string>
+    <string name="field_fornecedor">Fornecedor</string>
+    <string name="field_contrato">Contrato</string>
+    <string name="button_filtrar">Filtrar</string>
+    <string name="button_back">Voltar</string>
+
+    /** Tela Minha Conta - Login **/
+    <string name="title_minha_conta">Minha conta</string>
+    <string name="field_email">Email</string>
+    <string name="field_password">Senha</string>
+    <string name="button_login">Login</string>
+    <string name="link_forgot">Esqueceu a senha?</string>
+    <string name="link_signup">Ainda não tem login? Cadastre-se</string>
+
+    /** Tela Minha Conta - Logado **/
+    <string name="field_user">Usuário: </string>
+    <string name="field_email_my_account">Nome:\nEmail: </string>
+    <string name="field_uid_my_account">UID:\nContratos favoritos:</string>
+    <string name="button_change_password">Mudar Senha</string>
+    <string name="button_exit">Sair</string>
+    <string name="link_delete_account">Apagar conta</string>
+    <string name="button_alterar_dados">Alterar Dados</string>
+
+    /** Tela Minha Conta - Alterar dados **/
+    <string name="field_alteracao_de_senha">Alteração de senha</string>
+    <string name="field_current_password">Digite sua senha atual</string>
+    <string name="field_first_password">Digite a nova senha: (mínimo 6 caracteres)</string>
+    <string name="field_second_password">Confirme a nova senha</string>
+    <string name="button_change">Alterar</string>
+    <string name="button_confirm">Confirmar</string>
+    <string name="field_change_success">Sua senha foi alterada com sucesso!</string>
+    <string name="field_change_failure">Houve um erro, sua senha não foi alterada.</string>
+    <string name="title_alterar_dados">Alterar Dados</string>
+    <string name="field_type_email">Digite seu email</string>
+    <string name="button_send_email">Enviar email</string>
+    <string name="field_forgot_success">Um email de recuperação foi enviado a sua caixa de entrada</string>
+    <string name="field_forgot_failure">Houve um erro, não foi possível enviar email de recuperação de senha</string>
+
+    /** Tela Minha Conta - Cadastro **/
+    <string name="title_signup">Cadastro</string>
+    <string name="field_type_name">Digite seu nome completo</string>
+    <string name="field_type_password">Digite a senha (mínimo de 6 caracteres)</string>
+    <string name="field_type_password_repeat">Confirme a senha</string>
+    <string name="button_signup">Cadastrar</string>
+    <string name="field_signup_success">Um email de confirmação foi enviado a sua caixa de entrada</string>
+    <string name="field_signup_failure">Houve um erro, não foi possível criar sua conta</string>
+
+    /** Tela Mapas **/
+    <string name="title_maps">Mapa</string>
+
+    /** Tela Favoritos **/
+    <string name="title_favs">Favoritos</string>
+    <string name="button_state_no">Favoritar</string>
+    <string name="button_state_yes">Favoritado</string>
+
+    /** Tela Licenças **/
+    <string name="title_licencas">Licenças</string>
+    <string name="link_licencas_git">Clique aqui para abrir nosso repositório no GitHub</string>
+    <string name="field_todas_licencas">Todas as bibliotecas utilizadas e suas licenças estão listadas abaixo:\n\n • Kotlin Libraries: Apache License 2.0\n • AppCompat: Apache License 2.0\n • Constraint Layout: Apache License 2.0\n • Material Design: Apache License 2.0\n • Kotlin Coroutines: Apache License 2.0\n • Architecture Components: Apache License 2.0\n • Hilt - Dependency Injection: Apache License 2.0\n • Android Room: Apache License 2.0\n • Coil Image Framework: Apache License 2.0\n • Retrofit Libraries: Apache License 2.0\n • ViewPager Dots Indicator: Apache License 2.0\n • Serialization and Args: Apache License 2.0\n • Supabase: Apache License 2.0\n • Shimmer Effect: MIT License\n • Balloon: Apache License 2.0\n • JUnit: Eclipse Public License 1.0\n • Android Test Libraries: Apache License 2.0</string>
+
+    /** Tela Mais opções **/
+    <string name="title_more">Mais opções</string>
+    <string name="link_favoritos">Favoritos</string>
+    <string name="link_vistos">Vistos</string>
+    <string name="link_ajuda">Ajuda</string>
+    <string name="link_licencas">Licenças</string>
+
+    /** Tela Chatbot **/
+    <string name="field_type_message">Digite sua mensagem…</string>
+    <string name="field_bot">ComprasNet BOT</string>
+    <string name="field_enviada">Oi</string>
+    <string name="field_recebida">Olá! Em que posso ajudar?</string>
+
+    /** rvResultados **/
+    <string name="rv_uasg">UASG: </string>
+    <string name="rv_id">ID: </string>
+    <string name="rv_objeto">Objeto: </string>
+    <string name="id_do_contrato">ID do Contrato:</string>
+
+</resources>

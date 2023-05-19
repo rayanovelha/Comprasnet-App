@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "551125939927",
+    "project_id": "comprasnet-5ba9a",
+    "storage_bucket": "comprasnet-5ba9a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:551125939927:android:ea54b6157073757be82292",
+        "android_client_info": {
+          "package_name": "com.siasg.comprasnet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "551125939927-tdeg8bhnrgdq7facj95h6i4e26uemiv1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCF5mCZ1TXsxJNnmjGx-CbFxplx6yI2Cl4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "551125939927-tdeg8bhnrgdq7facj95h6i4e26uemiv1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

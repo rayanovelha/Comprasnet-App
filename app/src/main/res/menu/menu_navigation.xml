@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/selector_home"
+        android:title="@string/button_home"/>
+
+    <item
+        android:id="@+id/loginFragment"
+        android:icon="@drawable/selector_login"
+        android:title="@string/button_account"/>
+
+    <item
+        android:id="@+id/favoritesFragment"
+        android:icon="@drawable/selector_favs"
+        android:title="@string/button_favs"/>
+
+    <item
+        android:id="@+id/moreFragment"
+        android:icon="@drawable/ic_more_filled"
+        android:title="@string/button_more"/>
+</menu>

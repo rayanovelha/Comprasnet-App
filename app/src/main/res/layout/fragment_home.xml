@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="fragment"
+            type="com.siasg.comprasnet.ui.fragment.home.HomeFragment" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context="com.siasg.comprasnet.ui.fragment.home.HomeFragment" >
+
+            <View
+                android:id="@+id/viewHome"
+                android:layout_width="0dp"
+                android:layout_height="130dp"
+                android:background="?gradientBackground"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivComprasNetHome"
+                android:layout_width="368dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="22dp"
+                android:src="@drawable/comprasnet_mobile_white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/editTextSearch"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:hint="@string/field_pesquisar"
+                android:inputType="text"
+                app:layout_constraintEnd_toStartOf="@+id/btSearch"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viewHome" />
+
+            <Button
+                android:id="@+id/btSearch"
+                style="?primaryButtonStyle"
+                android:layout_width="50dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="30dp"
+                android:onClick="@{fragment::pesquisar}"
+                app:icon="@drawable/ic_search"
+                app:layout_constraintBottom_toBottomOf="@+id/editTextSearch"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/editTextSearch"
+                app:strokeColor="?backgroundColor" />
+
+            <TextView
+                android:id="@+id/tvMinhaConta"
+                style="?titleStyle2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="87dp"
+                android:text="@string/Home"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/viewHome" />
+
+            <Button
+                android:id="@+id/btTodosContratos"
+                style="?homeButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="30dp"
+                android:backgroundTint="@color/green_total_contratos"
+                android:onClick="@{fragment::irParaResultTotal}"
+                android:text="@string/button_total_contratos"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextSearch" />
+
+            <Button
+                android:id="@+id/bt30Contratos"
+                style="?homeButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="30dp"
+                android:backgroundTint="@color/red_vencem_30dias"
+                android:text="@string/button_vencem_menos30"
+                android:onClick="@{fragment::irParaResult30}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btTodosContratos" />
+
+            <Button
+                android:id="@+id/bt3060Contratos"
+                style="?homeButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="30dp"
+                android:backgroundTint="@color/orange_vencem_30_60"
+                android:text="@string/button_vencem_30a60"
+                android:onClick="@{fragment::irParaResult60}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bt30Contratos" />
+
+            <Button
+                android:id="@+id/bt6090Contratos"
+                style="?homeButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="30dp"
+                android:backgroundTint="@color/yellow_vencem_60_90"
+                android:text="@string/button_vencem_60a90"
+                android:onClick="@{fragment::irParaResult90}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bt3060Contratos" />
+
+            <Button
+                android:id="@+id/bt90180Contratos"
+                style="?homeButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="30dp"
+                android:backgroundTint="@color/blue_vencem_90_180"
+                android:text="@string/button_vencem_90a180"
+                android:onClick="@{fragment::irParaResult180}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bt6090Contratos" />
+
+            <Button
+                android:id="@+id/bt180Contratos"
+                style="?homeButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="30dp"
+                android:backgroundTint="@color/blue_vencem_180"
+                android:text="@string/button_vencem_mais180"
+                android:onClick="@{fragment::irParaResult180mais}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bt90180Contratos" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>
+
