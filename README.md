@@ -32,9 +32,9 @@ O ComprasNet App é uma aplicação gratuita em código aberto desenvolvida em K
 
 ## Screenshots 🖼
 
-![Tela Inicial](https://github.com/RayanOvelha/Comprasnet-App/blob/master/screenshots/screenshot_1.png?raw=true) ![Resultados de pesquisa](https://github.com/RayanOvelha/Comprasnet-App/blob/master/screenshots/screenshot_2.png?raw=true)
-![Resultados de filtro](https://github.com/RayanOvelha/Comprasnet-App/blob/master/screenshots/screenshot_3.png?raw=true) ![Minha Conta](https://github.com/RayanOvelha/Comprasnet-App/blob/master/screenshots/screenshot_4.png?raw=true)
+<img src="https://github.com/RayanOvelha/Comprasnet-App/blob/master/screenshots/screenshot_1.png?raw=true" width="284" height="571" /> <img src="https://github.com/RayanOvelha/Comprasnet-App/blob/master/screenshots/screenshot_2.png?raw=true" width="284" height="571" />
 
+<img src="https://github.com/RayanOvelha/Comprasnet-App/blob/master/screenshots/screenshot_3.png?raw=true" width="284" height="571" /> <img src="https://github.com/RayanOvelha/Comprasnet-App/blob/master/screenshots/screenshot_4.png?raw=true" width="284" height="571" />
 
 ## Clone o projeto
 
