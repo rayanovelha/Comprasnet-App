@@ -1,17 +1,22 @@
 
 # ComprasNet App
 
+<img src="https://github.com/RayanOvelha/Comprasnet-App/blob/master/app/src/main/res/drawable/comprasnet_mobile_white.png" width="387" height="93" />
 O ComprasNet App é uma aplicação gratuita em código aberto desenvolvida em Kotlin, com o objetivo de apresentar os dados disponibilizados pela API pública de Compras Governamentais do gov.br.
 
-![Logo](https://github.com/RayanOvelha/Comprasnet-App/blob/master/app/src/main/res/drawable/comprasnet_mobile_white.png?raw=true)
+# Download ⬇ instale em um smartphone
+[Download APK](https://github.com/RayanOvelha/Comprasnet-App/releases/download/v1.0/ComprasNet_v1.0.apk)
+
+
 
 ## Resumo
 
-    Apresentação da transparência de órgãos e entidades públicas federais à população através de uma aplicação android desenvolvida em kotlin de código aberto, disponibilizando informações sobre quantidade de contratos, vencimentos, valores, categorização e fornecedores.
+> Apresentação da transparência de órgãos e entidades públicas federais à população através de uma aplicação android desenvolvida em kotlin de código aberto, disponibilizando informações sobre quantidade de contratos, vencimentos, valores, categorização e fornecedores.
 
 # Autores 👥
 
 [Rayan Cordeiro](https://github.com/rayanovelha)
+
 [Gabriel Bezerra](https://github.com/biielbezerra)
 
 
@@ -31,14 +36,9 @@ O ComprasNet App é uma aplicação gratuita em código aberto desenvolvida em K
 
 ## Screenshots 🖼
 
-![Tela Inicial](https://github.com/RayanOvelha/Comprasnet-App/blob/master/screenshots/screenshot_1.png?raw=true)
+<img src="https://github.com/RayanOvelha/Comprasnet-App/blob/master/screenshots/screenshot_1.png?raw=true" width="284" height="571" /> <img src="https://github.com/RayanOvelha/Comprasnet-App/blob/master/screenshots/screenshot_2.png?raw=true" width="284" height="571" />
 
-![Resultados de pesquisa](https://github.com/RayanOvelha/Comprasnet-App/blob/master/screenshots/screenshot_2.png?raw=true)
-
-![Resultados de filtro](https://github.com/RayanOvelha/Comprasnet-App/blob/master/screenshots/screenshot_3.png?raw=true)
-
-![Minha Conta](https://github.com/RayanOvelha/Comprasnet-App/blob/master/screenshots/screenshot_4.png?raw=true)
-
+<img src="https://github.com/RayanOvelha/Comprasnet-App/blob/master/screenshots/screenshot_3.png?raw=true" width="284" height="571" /> <img src="https://github.com/RayanOvelha/Comprasnet-App/blob/master/screenshots/screenshot_4.png?raw=true" width="284" height="571" />
 
 ## Clone o projeto
 
