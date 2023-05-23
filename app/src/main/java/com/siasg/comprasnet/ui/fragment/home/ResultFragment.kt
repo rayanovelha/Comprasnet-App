@@ -154,7 +154,7 @@ class ResultFragment : Fragment(), OnContratoClickListener {
                     )
                 }
                 resource.erro?.let {
-                    Toast.makeText(context, it, Toast.LENGTH_LONG).show()
+                    Toast.makeText(context, "API caiu", Toast.LENGTH_LONG).show()
                 }
             }
         }
