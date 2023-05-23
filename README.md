@@ -31,6 +31,7 @@ O ComprasNet App é uma aplicação gratuita em código aberto desenvolvida em K
 - [x]   Favoritar contratos para acesso rápido
 - [x]   Backup dos favoritos em nuvem pelo Supabase
 - [x]   Requisição da API pública em estrutura MVVM
+- [x]   Jetpack Navigation
 - [x]   Código Aberto
 
 
