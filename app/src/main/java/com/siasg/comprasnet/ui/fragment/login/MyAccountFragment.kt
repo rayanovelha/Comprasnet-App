@@ -41,6 +41,12 @@ class MyAccountFragment : Fragment() {
         binding.lifecycleOwner = viewLifecycleOwner
         binding.fragment = this
 
+        lifecycleScope.launch(Main) {
+            if (!viewModel.isLogged()) {
+                irParaLogin()
+            }
+        }
+
         alertBuilder = AlertDialog.Builder(context)
 
         binding.tvUserEmail.isVisible = false
@@ -53,13 +59,19 @@ class MyAccountFragment : Fragment() {
         super.onStart()
         lifecycleScope.launch(IO) {
             withContext(Main) {
-                if (!viewModel.isLogged()) {
-                    irParaLogin()
-                }
-
+                binding.btChangePassword.isEnabled = false
+                binding.btLogout.isEnabled = false
+                binding.tvUidAccount.isVisible = false
+                binding.tvDeleteAccount.isVisible = false
             }
+
             atualizaDados(viewModel.getCurrentUserInfo(), viewModel.getCurrentUserData())
             withContext(Main) {
+                binding.btChangePassword.isEnabled = true
+                binding.btLogout.isEnabled = true
+                binding.tvUidAccount.isVisible = true
+                binding.tvDeleteAccount.isVisible = true
+
                 binding.tvUserEmail.isVisible = true
                 binding.shimmerDetails.stopShimmer()
                 binding.shimmerDetails.isVisible = false
