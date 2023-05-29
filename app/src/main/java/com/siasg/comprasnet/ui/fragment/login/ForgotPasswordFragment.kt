@@ -71,6 +71,15 @@ class ForgotPasswordFragment : Fragment() {
         return kotlin.runCatching {
             val uid = client.gotrue.retrieveUserForCurrentSession().id
             when {
+                !passwordInput.isEmpty() && !emailInput.isEmpty() && !nome.isEmpty() -> {
+                    Log.i(TAG, "atualizando email, senha e nome")
+                    client.gotrue.modifyUser(Email) {
+                        email = emailInput
+                        password = passwordInput
+                    }
+                    viewModel.updateCurrentUserName(uid, nome)
+                }
+
                 !passwordInput.isEmpty() && !emailInput.isEmpty() -> {
                     Log.i(TAG, "atualizando email e senha")
                     client.gotrue.modifyUser(Email) {
@@ -78,14 +87,17 @@ class ForgotPasswordFragment : Fragment() {
                         password = passwordInput
                     }
                 }
+
                 !passwordInput.isEmpty() && emailInput.isEmpty() -> {
                     Log.i(TAG, "atualizando senha")
                     client.gotrue.modifyUser(Email) {
                         password = passwordInput
                     }
                 }
+
                 !nome.isEmpty() ->
                     viewModel.updateCurrentUserName(uid, nome)
+
                 else ->
                     withContext(Main) {
                         Toast.makeText(context, "Nenhum dado foi alterado", Toast.LENGTH_SHORT).show()
@@ -93,7 +105,7 @@ class ForgotPasswordFragment : Fragment() {
             }
         }.onSuccess {
             withContext(Main) {
-                Toast.makeText(context, "Dados alterados com sucesso, verifique seu email", Toast.LENGTH_LONG).show()
+                Toast.makeText(context, "Dados alterados com sucesso, verifique seu email e logue novamente para atualizar", Toast.LENGTH_LONG).show()
             }
         }.onFailure {
             withContext(Main) {

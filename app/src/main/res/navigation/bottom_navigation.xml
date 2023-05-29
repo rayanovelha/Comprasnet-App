@@ -21,7 +21,12 @@
             app:destination="@id/favoritesFragment" />
         <action
             android:id="@+id/action_homeFragment_to_detailsFragment"
-            app:destination="@id/detailsFragment" />
+            app:destination="@id/detailsFragment"
+            app:enterAnim="@anim/slide_up"
+            app:exitAnim="@anim/slide_down"
+            app:popEnterAnim="@anim/slide_down"
+            app:popExitAnim="@anim/slide_up"
+            app:popUpToInclusive="false" />
         <action
             android:id="@+id/action_homeFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
@@ -74,6 +79,16 @@
             android:autoVerify="true"
             app:action="ACTION_VIEW"
             app:uri="compras.dados.gov.br/comprasContratos/doc/contrato/{idArgs}" />
+        <action
+            android:id="@+id/action_detailsFragment_to_resultFragment"
+            app:destination="@id/resultFragment"
+            app:popUpTo="@id/resultFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_detailsFragment_to_favoritesFragment"
+            app:destination="@id/favoritesFragment"
+            app:popUpTo="@id/favoritesFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/resultFragment"
@@ -83,11 +98,11 @@
         <action
             android:id="@+id/action_resultFragment_to_detailsFragment"
             app:destination="@id/detailsFragment"
-            app:enterAnim="@animator/nav_default_pop_enter_anim"
-            app:exitAnim="@animator/nav_default_pop_exit_anim"
-            app:popEnterAnim="@anim/nav_default_enter_anim"
-            app:popExitAnim="@animator/nav_default_exit_anim">
-        </action>
+            app:enterAnim="@anim/slide_up"
+            app:exitAnim="@anim/slide_down"
+            app:popEnterAnim="@anim/slide_down"
+            app:popExitAnim="@anim/slide_up"
+            app:popUpToInclusive="false" />
         <argument
             android:name="filterArg"
             app:argType="integer" />
@@ -102,7 +117,12 @@
         android:label="FavoritesFragment" >
         <action
             android:id="@+id/action_favoritesFragment_to_detailsFragment"
-            app:destination="@id/detailsFragment" />
+            app:destination="@id/detailsFragment"
+            app:enterAnim="@anim/slide_up"
+            app:exitAnim="@anim/slide_down"
+            app:popEnterAnim="@anim/slide_down"
+            app:popExitAnim="@anim/slide_up"
+            app:popUpToInclusive="false" />
         <action
             android:id="@+id/action_favoritesFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
@@ -151,4 +171,16 @@
         android:name="com.siasg.comprasnet.ui.fragment.more.LicensesFragment"
         android:label="LicensesFragment"
         tools:layout="@layout/fragment_licenses"/>
+    <fragment
+        android:id="@+id/onboardingFragment"
+        android:name="com.siasg.comprasnet.ui.fragment.onboarding.OnboardingFragment"
+        android:label="OnboardingFragment"
+        tools:layout="@layout/fragment_onboarding">
+        <action
+            android:id="@+id/action_onboardingFragment3_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@anim/slide_down"
+            app:popExitAnim="@android:anim/fade_in" />
+    </fragment>
 </navigation>

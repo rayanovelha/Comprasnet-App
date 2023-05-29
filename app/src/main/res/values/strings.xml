@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">ComprasNet</string>
 
+    /** SharedPreference **/
+    <string name="app_shared_prefs">com.siasg.comprasnet.PREFERENCES_FILE_KEY</string>
+    <string name="first_time_opening">FIRST_TIME_OPENING_KEY</string>
+
     /** OnBoarding **/
     <string name="button_start">VAMOS LÁ</string>
     <string name="text_onboarding1">Navegue pelos contratos</string>
@@ -27,6 +31,7 @@
 
     /** Tela Resultados **/
     <string name="title_results">Resultados</string>
+    <string name="title_search">Pesquisa: </string>
     <string name="field_ver">Ver</string>
     <string name="field_favoritar">Favoritar</string>
 

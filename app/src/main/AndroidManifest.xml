@@ -15,7 +15,8 @@
         android:theme="@style/Theme.ComprasNet"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".ui.activity.SplashActivity"
+            android:name=".ui.activity.MainActivity"
+            android:windowSoftInputMode="adjustPan"
             android:exported="true">
             <nav-graph android:value="@navigation/bottom_navigation" />
             <intent-filter>
@@ -23,12 +24,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".ui.activity.MainActivity"
-            android:windowSoftInputMode="adjustPan"
-            android:exported="true">
-            <nav-graph android:value="@navigation/bottom_navigation" />
         </activity>
         <meta-data android:name="SUPABASEURL" android:value="${SUPABASEURL}" />
         <meta-data android:name="SUPABASEKEY" android:value="${SUPABASEKEY}" />

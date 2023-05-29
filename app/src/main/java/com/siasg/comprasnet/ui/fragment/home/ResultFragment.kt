@@ -15,6 +15,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.siasg.comprasnet.R
 import com.siasg.comprasnet.databinding.FragmentResultBinding
 import com.siasg.comprasnet.domain.ApplicationDate
 import com.siasg.comprasnet.domain.Contrato
@@ -54,6 +55,14 @@ class ResultFragment : Fragment(), OnContratoClickListener {
         progressBar = binding.pbLogo
         progressBar.visibility = View.VISIBLE
 
+        return binding.root
+
+    }
+
+    @SuppressLint("SetTextI18n")
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
         val filter = args.filterArg
         val search = args.searchArg
 
@@ -70,7 +79,7 @@ class ResultFragment : Fragment(), OnContratoClickListener {
                         filter == 10 -> {
                             val resource = viewmodel.fetchContratosByObjeto(search)
                             withContext(Main) {
-                                binding.tvResultados.text = "Pesquisa: $search"
+                                binding.tvResultados.text = getString(R.string.title_search) + search
                             }
                             showContratos(resource)
                         }
@@ -133,9 +142,6 @@ class ResultFragment : Fragment(), OnContratoClickListener {
                 }
             }
         }
-
-        return binding.root
-
     }
 
     override fun onContratoClick(contrato: Contrato) {

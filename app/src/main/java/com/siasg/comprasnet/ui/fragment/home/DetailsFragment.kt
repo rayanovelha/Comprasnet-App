@@ -10,9 +10,11 @@ import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.button.MaterialButton
 import com.siasg.comprasnet.R
 import com.siasg.comprasnet.databinding.FragmentDetailsBinding
 import com.siasg.comprasnet.di.ComprasApiService
@@ -39,8 +41,9 @@ class DetailsFragment : Fragment() {
     val args: DetailsFragmentArgs by navArgs()
     private lateinit var progressBar: ProgressBar
     private var isFavorite = false
-
     private lateinit var recyclerView: RecyclerView
+    private lateinit var id: String
+    private lateinit var button: MaterialButton
 
     @Inject
     lateinit var comprasApiService: ComprasApiService
@@ -66,11 +69,17 @@ class DetailsFragment : Fragment() {
         recyclerView = binding.rvDetails
         recyclerView.layoutManager = LinearLayoutManager(context)
 
-        val id = args.idArgs.toString()
-        val button = binding.toggleButtonDetails
+        id = args.idArgs.toString()
+        button = binding.toggleButtonDetails
 
         progressBar = binding.pbLogoDetails
         progressBar.visibility = View.VISIBLE
+
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         lifecycleScope.launch(IO) {
             try {
@@ -127,7 +136,6 @@ class DetailsFragment : Fragment() {
                                         }
                                     }
                                 }
-
                                 button.isEnabled = true
                             }
                         }
@@ -200,7 +208,6 @@ class DetailsFragment : Fragment() {
             }
         }
 
-        return binding.root
     }
 
     fun share (v: View){
@@ -212,6 +219,10 @@ class DetailsFragment : Fragment() {
 
         startActivity(Intent.createChooser(shareIntent, "Compartilhar contrato via"))
 
+    }
+
+    fun back(v: View) {
+        findNavController().navigateUp()
     }
 
 }

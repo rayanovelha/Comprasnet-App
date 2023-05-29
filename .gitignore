@@ -13,3 +13,5 @@
 .externalNativeBuild
 .cxx
 local.properties
+/main/assets/contratos.json
+/main/assets/contratos_2021.json

@@ -1,67 +1,71 @@
 package com.siasg.comprasnet.ui.activity
 
-import android.net.Uri
+import android.content.Context
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.NavigationUI.setupWithNavController
+import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.siasg.comprasnet.R
 import com.siasg.comprasnet.databinding.ActivityMainBinding
+import com.siasg.comprasnet.di.ComprasApiService
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
+    @Inject
+    lateinit var comprasApiService: ComprasApiService
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
         binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val bottomNavigationView: BottomNavigationView = findViewById(R.id.barNavigationView)
+        val bottomNavigationView: BottomNavigationView = binding.barNavigationView
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragNavHost) as NavHostFragment
-        val navController: NavController = navHostFragment.navController
-        setupWithNavController(bottomNavigationView, navController)
+        val navController = navHostFragment.navController
 
+        bottomNavigationView.setupWithNavController(navController)
         bottomNavigationView.itemIconTintList = null
 
+        // INICIAR ONBOARDING
+        getSharedPreferences(
+            getString(R.string.app_shared_prefs),
+            Context.MODE_PRIVATE
+        )?.let { sharedPreferences ->
+            val isFirstTimeOpening =
+                sharedPreferences.getBoolean(getString(R.string.first_time_opening), true)
+
+            if (isFirstTimeOpening) {
+                navController.navigate(R.id.onboardingFragment)
+                with(sharedPreferences.edit()) {
+                    putBoolean(getString(R.string.first_time_opening), false)
+                    apply()
+                }
+            }
+        }
+
+        // NAVEGAR FRAGMENTOS
         bottomNavigationView.setOnItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.homeFragment -> {
-                    navController.navigate(R.id.homeFragment)
-                    true
-                }
-                R.id.loginFragment -> {
-                    navController.navigate(R.id.loginFragment)
-                    true
-                }
-                R.id.favoritesFragment -> {
-                    navController.navigate(R.id.favoritesFragment)
-                    true
-                }
-                R.id.moreFragment -> {
-                    navController.navigate(R.id.moreFragment)
-                    true
-                }
-                else -> false
-            }
+            navController.navigate(item.itemId)
+            true
+        }
+        bottomNavigationView.setOnItemReselectedListener {
+            navController.navigate(it.itemId)
         }
 
-        val data: Uri? = intent.data
-        if (data != null) {
-            val contratoId: String? = data.lastPathSegment
-            if (contratoId != null) {
-                val idArgs = contratoId.toInt()
-                navController.navigate(R.id.detailsFragment, Bundle().apply {
-                    putInt("idArgs",idArgs)
-                })
-            }
+        // ESCONDER NAVIGATION BAR
+        navController.addOnDestinationChangedListener { _, nd, _ ->
+            bottomNavigationView.visibility =
+                if (nd.id == R.id.onboardingFragment || nd.id == R.id.detailsFragment || nd.id == R.id.forgotPasswordFragment)
+                    View.GONE
+                else
+                    View.VISIBLE
         }
-
     }
-
 }

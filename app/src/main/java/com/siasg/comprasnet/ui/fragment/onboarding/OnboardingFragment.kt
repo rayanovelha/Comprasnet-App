@@ -46,7 +46,7 @@ class OnboardingFragment : Fragment() {
 
 
     fun start(v: View){
-        findNavController().navigate(R.id.action_onboardingFragment_to_mainActivity)
+        findNavController().navigate(R.id.action_onboardingFragment3_to_homeFragment)
     }
 
 }
