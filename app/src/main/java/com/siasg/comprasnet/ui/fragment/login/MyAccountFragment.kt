@@ -55,8 +55,8 @@ class MyAccountFragment : Fragment() {
         return binding.root
     }
 
-    override fun onStart() {
-        super.onStart()
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         lifecycleScope.launch(IO) {
             withContext(Main) {
                 binding.btChangePassword.isEnabled = false
@@ -64,7 +64,6 @@ class MyAccountFragment : Fragment() {
                 binding.tvUidAccount.isVisible = false
                 binding.tvDeleteAccount.isVisible = false
             }
-
             atualizaDados(viewModel.getCurrentUserInfo(), viewModel.getCurrentUserData())
             withContext(Main) {
                 binding.btChangePassword.isEnabled = true
@@ -77,6 +76,7 @@ class MyAccountFragment : Fragment() {
                 binding.shimmerDetails.isVisible = false
             }
         }
+
     }
 
     @SuppressLint("SetTextI18n")

@@ -170,7 +170,7 @@ class FavoritesFragment : Fragment() {
         }
     }
 
-    suspend fun showFavoritesContratos(listaContratos: MutableList<Contrato>) {
+    private suspend fun showFavoritesContratos(listaContratos: MutableList<Contrato>) {
         withContext(Main) {
             recyclerView.adapter = ContratosListAdapter(
                 listaContratos,
