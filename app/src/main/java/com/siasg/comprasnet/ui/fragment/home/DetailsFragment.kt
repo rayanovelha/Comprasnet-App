@@ -15,6 +15,7 @@ import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.button.MaterialButton
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.siasg.comprasnet.R
 import com.siasg.comprasnet.databinding.FragmentDetailsBinding
 import com.siasg.comprasnet.di.ComprasApiService
@@ -44,6 +45,7 @@ class DetailsFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var id: String
     private lateinit var button: MaterialButton
+    private lateinit var fabButton: FloatingActionButton
 
     @Inject
     lateinit var comprasApiService: ComprasApiService
@@ -72,14 +74,20 @@ class DetailsFragment : Fragment() {
         id = args.idArgs.toString()
         button = binding.toggleButtonDetails
 
+        fabButton = binding.btShareDetails
+        fabButton.visibility = View.GONE
+
         progressBar = binding.pbLogoDetails
-        progressBar.visibility = View.VISIBLE
+        progressBar.visibility = View.GONE
 
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun onResume() {
+        super.onResume()
+
+        progressBar.visibility = View.VISIBLE
+        fabButton.visibility = View.VISIBLE
 
         lifecycleScope.launch(IO) {
             try {

@@ -3,28 +3,28 @@ package com.siasg.comprasnet.ui.activity
 import android.content.Context
 import android.os.Bundle
 import android.view.View
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.siasg.comprasnet.R
 import com.siasg.comprasnet.databinding.ActivityMainBinding
-import com.siasg.comprasnet.di.ComprasApiService
+import com.siasg.comprasnet.viewmodel.SupabaseViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-
-    @Inject
-    lateinit var comprasApiService: ComprasApiService
+    private val viewModel: SupabaseViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        viewModel.isLogged()
 
         val bottomNavigationView: BottomNavigationView = binding.barNavigationView
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragNavHost) as NavHostFragment

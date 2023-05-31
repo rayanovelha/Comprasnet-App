@@ -11,25 +11,12 @@
         android:label="@string/Home"
         tools:layout="@layout/fragment_home">
         <action
-            android:id="@+id/action_homeFragment_to_myAccountFragment"
-            app:destination="@id/myAccountFragment" />
-        <action
             android:id="@+id/action_homeFragment_to_resultFragment"
-            app:destination="@id/resultFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_favoritesFragment"
-            app:destination="@id/favoritesFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_detailsFragment"
-            app:destination="@id/detailsFragment"
-            app:enterAnim="@anim/slide_up"
-            app:exitAnim="@anim/slide_down"
-            app:popEnterAnim="@anim/slide_down"
-            app:popExitAnim="@anim/slide_up"
-            app:popUpToInclusive="false" />
-        <action
-            android:id="@+id/action_homeFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            app:destination="@id/resultFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_out"
+            app:popExitAnim="@android:anim/fade_in" />
     </fragment>
     <fragment
         android:id="@+id/moreFragment"
@@ -38,13 +25,25 @@
         tools:layout="@layout/fragment_more" >
         <action
             android:id="@+id/action_moreFragment_to_helpFragment"
-            app:destination="@id/helpFragment" />
+            app:destination="@id/helpFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_out"
+            app:popExitAnim="@android:anim/fade_in" />
         <action
             android:id="@+id/action_moreFragment_to_favoritesFragment"
-            app:destination="@id/favoritesFragment" />
+            app:destination="@id/favoritesFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_out"
+            app:popExitAnim="@android:anim/fade_in" />
         <action
             android:id="@+id/action_moreFragment_to_licensesFragment"
-            app:destination="@id/licensesFragment" />
+            app:destination="@id/licensesFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_out"
+            app:popExitAnim="@android:anim/fade_in" />
     </fragment>
     <fragment
         android:id="@+id/myAccountFragment"
@@ -100,7 +99,7 @@
             app:destination="@id/detailsFragment"
             app:enterAnim="@anim/slide_up"
             app:exitAnim="@anim/slide_down"
-            app:popEnterAnim="@anim/slide_down"
+            app:popEnterAnim="@anim/slide_up"
             app:popExitAnim="@anim/slide_up"
             app:popUpToInclusive="false" />
         <argument
@@ -120,12 +119,16 @@
             app:destination="@id/detailsFragment"
             app:enterAnim="@anim/slide_up"
             app:exitAnim="@anim/slide_down"
-            app:popEnterAnim="@anim/slide_down"
+            app:popEnterAnim="@anim/slide_up"
             app:popExitAnim="@anim/slide_up"
             app:popUpToInclusive="false" />
         <action
             android:id="@+id/action_favoritesFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            app:destination="@id/loginFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_out"
+            app:popExitAnim="@android:anim/fade_in" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -136,17 +139,11 @@
             android:id="@+id/action_loginFragment_to_signUpFragment"
             app:destination="@id/signUpFragment" />
         <action
-            android:id="@+id/action_loginFragment_to_myAccountFragment"
-            app:destination="@id/myAccountFragment" />
-        <action
             android:id="@+id/action_loginFragment_to_forgotPasswordFragment"
             app:destination="@id/forgotPasswordFragment" />
         <action
-            android:id="@+id/action_loginFragment_to_myAccountFragment2"
+            android:id="@+id/action_loginFragment_to_myAccountFragment"
             app:destination="@id/myAccountFragment" />
-        <action
-            android:id="@+id/action_loginFragment_to_favoritesFragment"
-            app:destination="@id/favoritesFragment" />
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
@@ -181,6 +178,7 @@
             app:destination="@id/homeFragment"
             app:enterAnim="@android:anim/fade_in"
             app:exitAnim="@anim/slide_down"
+            app:popEnterAnim="@anim/slide_down"
             app:popExitAnim="@android:anim/fade_in" />
     </fragment>
 </navigation>

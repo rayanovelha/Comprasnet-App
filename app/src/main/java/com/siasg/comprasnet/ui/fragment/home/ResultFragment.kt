@@ -53,20 +53,21 @@ class ResultFragment : Fragment(), OnContratoClickListener {
         recyclerView.layoutManager = LinearLayoutManager(context)
 
         progressBar = binding.pbLogo
-        progressBar.visibility = View.VISIBLE
+        progressBar.visibility = View.GONE
 
         return binding.root
 
     }
 
     @SuppressLint("SetTextI18n")
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun onResume() {
+        super.onResume()
 
         val filter = args.filterArg
         val search = args.searchArg
 
         applicationDate = ApplicationDate()
+        progressBar.visibility = View.VISIBLE
 
         lifecycleScope.launch(IO) {
             try {
@@ -142,6 +143,7 @@ class ResultFragment : Fragment(), OnContratoClickListener {
                 }
             }
         }
+
     }
 
     override fun onContratoClick(contrato: Contrato) {

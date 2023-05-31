@@ -74,11 +74,16 @@ class FavoritesFragment : Fragment() {
 
             messageApi = PostgrestMessageApiImpl()
 
-            loadFavoritesContratos()
-
         }
 
         return binding.root
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        loadFavoritesContratos()
+
     }
 
     private fun loadFavoritesContratos() {

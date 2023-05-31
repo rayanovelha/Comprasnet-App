@@ -33,11 +33,12 @@ class LoginFragment : Fragment() {
         binding.lifecycleOwner = viewLifecycleOwner
         binding.fragment = this
 
-        lifecycleScope.launch(Main){
-            if (viewModel.isLogged()) {
-                irParaConta()
-            }
+        val isLogged = viewModel.isLogged()
+
+        if (isLogged) {
+            irParaConta()
         }
+
 
         return binding.root
     }
