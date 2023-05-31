@@ -55,7 +55,7 @@
             app:destination="@id/loginFragment" />
         <action
             android:id="@+id/action_myAccountFragment_to_forgotPasswordFragment"
-            app:destination="@id/forgotPasswordFragment" />
+            app:destination="@id/changeUserFragment" />
         <action
             android:id="@+id/action_myAccountFragment_to_signUpFragment"
             app:destination="@id/signUpFragment" />
@@ -144,6 +144,11 @@
         <action
             android:id="@+id/action_loginFragment_to_myAccountFragment"
             app:destination="@id/myAccountFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_forgotPasswordFragment2"
+            app:destination="@id/forgotPasswordFragment"
+            app:enterAnim="@anim/slide_up"
+            app:exitAnim="@anim/slide_down" />
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
@@ -155,12 +160,12 @@
             app:destination="@id/loginFragment" />
     </fragment>
     <fragment
-        android:id="@+id/forgotPasswordFragment"
-        android:name="com.siasg.comprasnet.ui.fragment.login.ForgotPasswordFragment"
-        android:label="ForgotPasswordFragment"
-        tools:layout="@layout/fragment_forgot_password">
+        android:id="@+id/changeUserFragment"
+        android:name="com.siasg.comprasnet.ui.fragment.login.ChangeUserFragment"
+        android:label="C:\Users\rayan\AndroidStudioProjects\comprasnet\app\src\main\res\navigation\start_navigation.xml (O sistema não pode encontrar o arquivo especificado)"
+        tools:layout="@layout/fragment_change_user">
         <action
-            android:id="@+id/action_forgotPasswordFragment_to_loginFragment"
+            android:id="@+id/action_changeUserFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
     </fragment>
     <fragment
@@ -180,5 +185,16 @@
             app:exitAnim="@anim/slide_down"
             app:popEnterAnim="@anim/slide_down"
             app:popExitAnim="@android:anim/fade_in" />
+    </fragment>
+    <fragment
+        android:id="@+id/forgotPasswordFragment"
+        android:name="com.siasg.comprasnet.ui.fragment.login.ForgotPasswordFragment"
+        android:label="ForgotPasswordFragment"
+        tools:layout="@layout/fragment_forgot_password">
+        <action
+            android:id="@+id/action_forgotPasswordFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/slide_up"
+            app:exitAnim="@anim/slide_down" />
     </fragment>
 </navigation>

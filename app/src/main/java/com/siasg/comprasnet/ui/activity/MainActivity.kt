@@ -62,7 +62,7 @@ class MainActivity : AppCompatActivity() {
         // ESCONDER NAVIGATION BAR
         navController.addOnDestinationChangedListener { _, nd, _ ->
             bottomNavigationView.visibility =
-                if (nd.id == R.id.onboardingFragment || nd.id == R.id.detailsFragment || nd.id == R.id.forgotPasswordFragment)
+                if (nd.id == R.id.onboardingFragment || nd.id == R.id.detailsFragment || nd.id == R.id.changeUserFragment || nd.id == R.id.forgotPasswordFragment)
                     View.GONE
                 else
                     View.VISIBLE

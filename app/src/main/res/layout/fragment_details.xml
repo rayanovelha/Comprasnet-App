@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="fragment"
             type="com.siasg.comprasnet.ui.fragment.home.DetailsFragment" />
