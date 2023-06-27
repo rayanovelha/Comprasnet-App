@@ -55,7 +55,11 @@
             app:destination="@id/loginFragment" />
         <action
             android:id="@+id/action_myAccountFragment_to_forgotPasswordFragment"
-            app:destination="@id/changeUserFragment" />
+            app:destination="@id/changeUserFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_out"
+            app:popExitAnim="@android:anim/fade_in" />
         <action
             android:id="@+id/action_myAccountFragment_to_signUpFragment"
             app:destination="@id/signUpFragment" />
@@ -78,16 +82,6 @@
             android:autoVerify="true"
             app:action="ACTION_VIEW"
             app:uri="compras.dados.gov.br/comprasContratos/doc/contrato/{idArgs}" />
-        <action
-            android:id="@+id/action_detailsFragment_to_resultFragment"
-            app:destination="@id/resultFragment"
-            app:popUpTo="@id/resultFragment"
-            app:popUpToInclusive="true" />
-        <action
-            android:id="@+id/action_detailsFragment_to_favoritesFragment"
-            app:destination="@id/favoritesFragment"
-            app:popUpTo="@id/favoritesFragment"
-            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/resultFragment"
@@ -97,10 +91,10 @@
         <action
             android:id="@+id/action_resultFragment_to_detailsFragment"
             app:destination="@id/detailsFragment"
-            app:enterAnim="@anim/slide_up"
+            app:enterAnim="@android:anim/fade_in"
             app:exitAnim="@anim/slide_down"
-            app:popEnterAnim="@anim/slide_up"
-            app:popExitAnim="@anim/slide_up"
+            app:popEnterAnim="@anim/slide_down"
+            app:popExitAnim="@android:anim/fade_in"
             app:popUpToInclusive="false" />
         <argument
             android:name="filterArg"
@@ -117,10 +111,10 @@
         <action
             android:id="@+id/action_favoritesFragment_to_detailsFragment"
             app:destination="@id/detailsFragment"
-            app:enterAnim="@anim/slide_up"
+            app:enterAnim="@android:anim/fade_in"
             app:exitAnim="@anim/slide_down"
-            app:popEnterAnim="@anim/slide_up"
-            app:popExitAnim="@anim/slide_up"
+            app:popEnterAnim="@anim/slide_down"
+            app:popExitAnim="@android:anim/fade_in"
             app:popUpToInclusive="false" />
         <action
             android:id="@+id/action_favoritesFragment_to_loginFragment"
@@ -143,7 +137,11 @@
             app:destination="@id/forgotPasswordFragment" />
         <action
             android:id="@+id/action_loginFragment_to_myAccountFragment"
-            app:destination="@id/myAccountFragment" />
+            app:destination="@id/myAccountFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_out"
+            app:popExitAnim="@android:anim/fade_in" />
         <action
             android:id="@+id/action_loginFragment_to_forgotPasswordFragment2"
             app:destination="@id/forgotPasswordFragment"
