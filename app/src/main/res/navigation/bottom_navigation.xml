@@ -11,25 +11,12 @@
         android:label="@string/Home"
         tools:layout="@layout/fragment_home">
         <action
-            android:id="@+id/action_homeFragment_to_myAccountFragment"
-            app:destination="@id/myAccountFragment" />
-        <action
             android:id="@+id/action_homeFragment_to_resultFragment"
-            app:destination="@id/resultFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_favoritesFragment"
-            app:destination="@id/favoritesFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_detailsFragment"
-            app:destination="@id/detailsFragment"
-            app:enterAnim="@anim/slide_up"
-            app:exitAnim="@anim/slide_down"
-            app:popEnterAnim="@anim/slide_down"
-            app:popExitAnim="@anim/slide_up"
-            app:popUpToInclusive="false" />
-        <action
-            android:id="@+id/action_homeFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            app:destination="@id/resultFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_out"
+            app:popExitAnim="@android:anim/fade_in" />
     </fragment>
     <fragment
         android:id="@+id/moreFragment"
@@ -38,13 +25,25 @@
         tools:layout="@layout/fragment_more" >
         <action
             android:id="@+id/action_moreFragment_to_helpFragment"
-            app:destination="@id/helpFragment" />
+            app:destination="@id/helpFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_out"
+            app:popExitAnim="@android:anim/fade_in" />
         <action
             android:id="@+id/action_moreFragment_to_favoritesFragment"
-            app:destination="@id/favoritesFragment" />
+            app:destination="@id/favoritesFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_out"
+            app:popExitAnim="@android:anim/fade_in" />
         <action
             android:id="@+id/action_moreFragment_to_licensesFragment"
-            app:destination="@id/licensesFragment" />
+            app:destination="@id/licensesFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_out"
+            app:popExitAnim="@android:anim/fade_in" />
     </fragment>
     <fragment
         android:id="@+id/myAccountFragment"
@@ -56,7 +55,11 @@
             app:destination="@id/loginFragment" />
         <action
             android:id="@+id/action_myAccountFragment_to_forgotPasswordFragment"
-            app:destination="@id/forgotPasswordFragment" />
+            app:destination="@id/changeUserFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_out"
+            app:popExitAnim="@android:anim/fade_in" />
         <action
             android:id="@+id/action_myAccountFragment_to_signUpFragment"
             app:destination="@id/signUpFragment" />
@@ -79,16 +82,6 @@
             android:autoVerify="true"
             app:action="ACTION_VIEW"
             app:uri="compras.dados.gov.br/comprasContratos/doc/contrato/{idArgs}" />
-        <action
-            android:id="@+id/action_detailsFragment_to_resultFragment"
-            app:destination="@id/resultFragment"
-            app:popUpTo="@id/resultFragment"
-            app:popUpToInclusive="true" />
-        <action
-            android:id="@+id/action_detailsFragment_to_favoritesFragment"
-            app:destination="@id/favoritesFragment"
-            app:popUpTo="@id/favoritesFragment"
-            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/resultFragment"
@@ -98,10 +91,10 @@
         <action
             android:id="@+id/action_resultFragment_to_detailsFragment"
             app:destination="@id/detailsFragment"
-            app:enterAnim="@anim/slide_up"
+            app:enterAnim="@android:anim/fade_in"
             app:exitAnim="@anim/slide_down"
             app:popEnterAnim="@anim/slide_down"
-            app:popExitAnim="@anim/slide_up"
+            app:popExitAnim="@android:anim/fade_in"
             app:popUpToInclusive="false" />
         <argument
             android:name="filterArg"
@@ -118,14 +111,18 @@
         <action
             android:id="@+id/action_favoritesFragment_to_detailsFragment"
             app:destination="@id/detailsFragment"
-            app:enterAnim="@anim/slide_up"
+            app:enterAnim="@android:anim/fade_in"
             app:exitAnim="@anim/slide_down"
             app:popEnterAnim="@anim/slide_down"
-            app:popExitAnim="@anim/slide_up"
+            app:popExitAnim="@android:anim/fade_in"
             app:popUpToInclusive="false" />
         <action
             android:id="@+id/action_favoritesFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            app:destination="@id/loginFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_out"
+            app:popExitAnim="@android:anim/fade_in" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -136,17 +133,20 @@
             android:id="@+id/action_loginFragment_to_signUpFragment"
             app:destination="@id/signUpFragment" />
         <action
-            android:id="@+id/action_loginFragment_to_myAccountFragment"
-            app:destination="@id/myAccountFragment" />
-        <action
             android:id="@+id/action_loginFragment_to_forgotPasswordFragment"
             app:destination="@id/forgotPasswordFragment" />
         <action
-            android:id="@+id/action_loginFragment_to_myAccountFragment2"
-            app:destination="@id/myAccountFragment" />
+            android:id="@+id/action_loginFragment_to_myAccountFragment"
+            app:destination="@id/myAccountFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_out"
+            app:popExitAnim="@android:anim/fade_in" />
         <action
-            android:id="@+id/action_loginFragment_to_favoritesFragment"
-            app:destination="@id/favoritesFragment" />
+            android:id="@+id/action_loginFragment_to_forgotPasswordFragment2"
+            app:destination="@id/forgotPasswordFragment"
+            app:enterAnim="@anim/slide_up"
+            app:exitAnim="@anim/slide_down" />
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
@@ -158,12 +158,12 @@
             app:destination="@id/loginFragment" />
     </fragment>
     <fragment
-        android:id="@+id/forgotPasswordFragment"
-        android:name="com.siasg.comprasnet.ui.fragment.login.ForgotPasswordFragment"
-        android:label="ForgotPasswordFragment"
-        tools:layout="@layout/fragment_forgot_password">
+        android:id="@+id/changeUserFragment"
+        android:name="com.siasg.comprasnet.ui.fragment.login.ChangeUserFragment"
+        android:label="C:\Users\rayan\AndroidStudioProjects\comprasnet\app\src\main\res\navigation\start_navigation.xml (O sistema não pode encontrar o arquivo especificado)"
+        tools:layout="@layout/fragment_change_user">
         <action
-            android:id="@+id/action_forgotPasswordFragment_to_loginFragment"
+            android:id="@+id/action_changeUserFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
     </fragment>
     <fragment
@@ -181,6 +181,18 @@
             app:destination="@id/homeFragment"
             app:enterAnim="@android:anim/fade_in"
             app:exitAnim="@anim/slide_down"
+            app:popEnterAnim="@anim/slide_down"
             app:popExitAnim="@android:anim/fade_in" />
+    </fragment>
+    <fragment
+        android:id="@+id/forgotPasswordFragment"
+        android:name="com.siasg.comprasnet.ui.fragment.login.ForgotPasswordFragment"
+        android:label="ForgotPasswordFragment"
+        tools:layout="@layout/fragment_forgot_password">
+        <action
+            android:id="@+id/action_forgotPasswordFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/slide_up"
+            app:exitAnim="@anim/slide_down" />
     </fragment>
 </navigation>

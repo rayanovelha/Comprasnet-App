@@ -84,24 +84,26 @@ class MyAccountFragment : Fragment() {
         resourceUserInfo: LiveData<Resource<UserInfo>>,
         resourceUserData: LiveData<Resource<PostgrestMessage>>
     ) {
-        viewLifecycleOwner.lifecycleScope.launch(Main) {
-            resourceUserData.observe(viewLifecycleOwner) { resource ->
-                resource.dado?.let {
-                    val name = it.name
-                    var favs = 0
-                    if (!it.favorites.isEmpty())
-                        favs = it.favorites.split(",").size
-                    binding.tvUserEmail.text = "Nome: $name"
-                    binding.tvUidAccount.text = "$favs contratos favoritos"
+        lifecycleScope.launch(Main) {
+            if (isAdded && view != null) {
+                resourceUserData.observe(viewLifecycleOwner) { resource ->
+                    resource.dado?.let {
+                        val name = it.name
+                        var favs = 0
+                        if (!it.favorites.isEmpty())
+                            favs = it.favorites.split(",").size
+                        binding.tvUserEmail.text = "Nome: $name"
+                        binding.tvUidAccount.text = "$favs contratos favoritos"
+                    }
                 }
-            }
-            resourceUserInfo.observe(viewLifecycleOwner) { resource ->
-                resource.dado?.let {
-                    val email = it.email
-                    val uid = it.id
-                    uidCopy = it.id
-                    binding.tvUserEmail.text = "${binding.tvUserEmail.text}\nEmail: $email"
-                    binding.tvUidAccount.text = "UID: $uid\n${binding.tvUidAccount.text}"
+                resourceUserInfo.observe(viewLifecycleOwner) { resource ->
+                    resource.dado?.let {
+                        val email = it.email
+                        val uid = it.id
+                        uidCopy = it.id
+                        binding.tvUserEmail.text = "${binding.tvUserEmail.text}\nEmail: $email"
+                        binding.tvUidAccount.text = "UID: $uid\n${binding.tvUidAccount.text}"
+                    }
                 }
             }
         }

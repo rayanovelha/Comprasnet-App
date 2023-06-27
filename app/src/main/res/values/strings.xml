@@ -81,6 +81,9 @@
     <string name="field_forgot_success">Um email de recuperação foi enviado a sua caixa de entrada</string>
     <string name="field_forgot_failure">Houve um erro, não foi possível enviar email de recuperação de senha</string>
 
+    /** Tela Minha Conta - Esqueci a senha **/
+    <string name="title_esqueci_senha">Esqueci a senha</string>
+
     /** Tela Minha Conta - Cadastro **/
     <string name="title_signup">Cadastro</string>
     <string name="field_type_name">Digite seu nome completo</string>
