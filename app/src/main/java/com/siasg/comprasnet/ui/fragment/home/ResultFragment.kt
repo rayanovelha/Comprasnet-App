@@ -5,8 +5,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.Toast
+import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.LiveData
@@ -35,7 +37,9 @@ class ResultFragment : Fragment(), OnContratoClickListener {
     private lateinit var binding: FragmentResultBinding
     private lateinit var recyclerView: RecyclerView
     private lateinit var progressBar: ProgressBar
+    private lateinit var cardError: CardView
     private lateinit var applicationDate: ApplicationDate
+    private lateinit var buttonError: Button
 
     private val viewmodel: ComprasApiViewModel by viewModels()
     val args: ResultFragmentArgs by navArgs()
@@ -54,6 +58,12 @@ class ResultFragment : Fragment(), OnContratoClickListener {
 
         progressBar = binding.pbLogo
         progressBar.visibility = View.GONE
+
+        cardError = binding.cardErrorResult
+        cardError.visibility = View.GONE
+        cardError.isEnabled = false
+
+        buttonError = binding.btError
 
         return binding.root
 
@@ -123,19 +133,11 @@ class ResultFragment : Fragment(), OnContratoClickListener {
 
             } catch (e: TimeoutCancellationException) {
                 withContext(Main) {
-                    Toast.makeText(
-                        context,
-                        "API do governo demorando muito para responder. Volte e tente novamente.",
-                        Toast.LENGTH_LONG
-                    ).show()
+                    showCardError()
                 }
             } catch (e: Exception) {
                 withContext(Main) {
-                    Toast.makeText(
-                        context,
-                        "Ocorreu um ERRO ao requisitar os contratos. Tente novamente.",
-                        Toast.LENGTH_LONG
-                    ).show()
+                    showCardError()
                 }
             } finally {
                 withContext(Main) {
@@ -151,6 +153,17 @@ class ResultFragment : Fragment(), OnContratoClickListener {
         findNavController().navigate(action)
     }
 
+    fun back(v: View){
+        findNavController().navigateUp()
+    }
+
+    private fun showCardError(){
+        cardError.visibility = View.VISIBLE
+        cardError.isEnabled = true
+        buttonError.visibility = View.VISIBLE
+        buttonError.isEnabled = true
+    }
+
     private fun showContratos(resource: LiveData<Resource<ContratosResponse?>>) {
         viewLifecycleOwner.lifecycleScope.launch(Main) {
             resource.observe(viewLifecycleOwner) { resource ->
@@ -162,6 +175,7 @@ class ResultFragment : Fragment(), OnContratoClickListener {
                     )
                 }
                 resource.erro?.let {
+                    showCardError()
                     Toast.makeText(context, "API caiu", Toast.LENGTH_LONG).show()
                 }
             }

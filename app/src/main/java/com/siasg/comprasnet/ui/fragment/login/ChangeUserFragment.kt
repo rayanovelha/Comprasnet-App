@@ -13,6 +13,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.siasg.comprasnet.R
 import com.siasg.comprasnet.databinding.FragmentChangeUserBinding
+import com.siasg.comprasnet.ui.extensions.hideKeyboard
 import com.siasg.comprasnet.viewmodel.SupabaseViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import io.github.jan.supabase.SupabaseClient
@@ -45,16 +46,22 @@ class ChangeUserFragment : Fragment() {
         return binding.root
     }
 
+    fun back(v:View){
+        findNavController().navigateUp()
+    }
+
     @SuppressWarnings
     fun irParaLogin(v: View) {
         val email = binding.TextEditEmailAddress.text.toString().trim()
         val nome = binding.TextEditChangeName.text.toString().trim()
         val password = binding.TextEditConfirmPassword.text.toString().trim()
+        hideKeyboard()
 
         if (verificaCampos()) {
             lifecycleScope.launch(IO) {
                 withContext(Main) {
                     binding.btSendEmailChange.isEnabled = false
+                    binding.btCancelEmailChange.isEnabled = false
                 }
                 if (updateUser(email, nome, password)) {
                     withContext(Main) {
@@ -120,6 +127,8 @@ class ChangeUserFragment : Fragment() {
             withContext(Main) {
                 Toast.makeText(context, "Erro, tente novamente mais tarde", Toast.LENGTH_SHORT)
                     .show()
+                binding.btSendEmailChange.isEnabled = true
+                binding.btCancelEmailChange.isEnabled = true
                 it.printStackTrace()
             }
         }.isSuccess
