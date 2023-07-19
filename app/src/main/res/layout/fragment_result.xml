@@ -20,12 +20,12 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvResultados"
             android:layout_width="0dp"
-            app:setAdapter="@{adapter}"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/viewResults"
+            app:setAdapter="@{adapter}"
             tools:listitem="@layout/list_resultados" />
 
         <View
@@ -48,10 +48,26 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/viewResults" />
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btBackResultados"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
+            android:onClick="@{fragment::back}"
+            app:cornerRadius="16dp"
+            app:icon="@drawable/ic_arrow_back"
+            app:iconGravity="textStart"
+            app:iconPadding="0dp"
+            app:iconSize="24dp"
+            app:iconTint="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <ProgressBar
             android:id="@+id/pbLogo"
             style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Large"
-            android:layout_width="76dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:indeterminateDrawable="@drawable/ic_progress_bar"
             android:visibility="invisible"
@@ -59,6 +75,64 @@
             app:layout_constraintEnd_toEndOf="@+id/rvResultados"
             app:layout_constraintStart_toStartOf="@+id/rvResultados"
             app:layout_constraintTop_toTopOf="@+id/rvResultados" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardErrorResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:clickable="true"
+            app:cardElevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewResults"
+            tools:visibility="invisible">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/btError"
+                    style="?primaryButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="@{fragment::back}"
+                    android:text="@string/button_try_again"
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvError" />
+
+                <ImageView
+                    android:id="@+id/imageError"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:cropToPadding="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/warning_error" />
+
+                <TextView
+                    android:id="@+id/tvError"
+                    style="?subtitleStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/field_erro_api"
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageError" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -5,8 +5,10 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.Toast
+import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -37,6 +39,10 @@ class FavoritesFragment : Fragment() {
     private lateinit var binding: FragmentFavoritesBinding
     private lateinit var recyclerView: RecyclerView
     private lateinit var progressBar: ProgressBar
+    private lateinit var buttonError: Button
+    private lateinit var cardError: CardView
+    private lateinit var buttonEmpty: Button
+    private lateinit var cardEmpty: CardView
 
     @Inject
     lateinit var comprasApiService: ComprasApiService
@@ -57,15 +63,27 @@ class FavoritesFragment : Fragment() {
         binding.fragment = this
         binding.lifecycleOwner = viewLifecycleOwner
 
+        buttonError = binding.btErrorFavorites
+
+        cardError = binding.cardErrorFavorites
+        cardError.visibility = View.GONE
+        cardError.isEnabled = false
+
+        buttonEmpty = binding.btEmptyFavorites
+
+        cardEmpty = binding.cardEmptyFavorites
+        cardEmpty.visibility = View.GONE
+        cardEmpty.isEnabled = false
+
+        return binding.root
+    }
+
+    override fun onResume() {
+        super.onResume()
+
         if (client.gotrue.currentSessionOrNull() == null) {
-            Toast.makeText(
-                context,
-                "Para acessar os favoritos é necessário estar logado",
-                Toast.LENGTH_LONG
-            ).show()
-            lifecycleScope.launch(Main) {
-                irParaLogin()
-            }
+
+            showCardError()
 
         } else {
 
@@ -74,16 +92,9 @@ class FavoritesFragment : Fragment() {
 
             messageApi = PostgrestMessageApiImpl()
 
+            loadFavoritesContratos()
+
         }
-
-        return binding.root
-    }
-
-    override fun onResume() {
-        super.onResume()
-
-        loadFavoritesContratos()
-
     }
 
     private fun loadFavoritesContratos() {
@@ -108,8 +119,7 @@ class FavoritesFragment : Fragment() {
                     /** se a nuvem estiver vazia */
                     if (responsePostgrest.favorites.isEmpty())
                         withContext(Main) {
-                            Toast.makeText(context, "Nenhum contrato salvo", Toast.LENGTH_SHORT)
-                                .show()
+                            showCardEmpty()
                         }
                     else
                     /** se a nuvem não estiver vazia */
@@ -190,9 +200,28 @@ class FavoritesFragment : Fragment() {
         findNavController().navigate(action)
     }
 
-    fun irParaLogin() {
+    fun irParaLogin(v: View) {
         val action = FavoritesFragmentDirections.actionFavoritesFragmentToLoginFragment()
         findNavController().navigate(action)
+    }
+
+    fun irParaHome(v: View){
+        val action = FavoritesFragmentDirections.actionFavoritesFragmentToHomeFragment()
+        findNavController().navigate(action)
+    }
+
+    private fun showCardError(){
+        cardError.visibility = View.VISIBLE
+        cardError.isEnabled = true
+        buttonError.visibility = View.VISIBLE
+        buttonError.isEnabled = true
+    }
+
+    private fun showCardEmpty(){
+        cardEmpty.visibility = View.VISIBLE
+        cardEmpty.isEnabled = true
+        buttonEmpty.visibility = View.VISIBLE
+        buttonEmpty.isEnabled = true
     }
 
 }

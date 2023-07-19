@@ -34,6 +34,8 @@
     <string name="title_search">Pesquisa: </string>
     <string name="field_ver">Ver</string>
     <string name="field_favoritar">Favoritar</string>
+    <string name="field_erro_api">Houve um erro no recebimento dos dados governamentais</string>
+    <string name="button_try_again">Tentar novamente</string>
 
     /** Tela Detalhes **/
     <string name="title_details">Detalhes</string>
@@ -73,6 +75,7 @@
     <string name="field_second_password">Confirme a nova senha</string>
     <string name="button_change">Alterar</string>
     <string name="button_confirm">Confirmar</string>
+    <string name="button_cancel">Cancelar</string>
     <string name="field_change_success">Sua senha foi alterada com sucesso!</string>
     <string name="field_change_failure">Houve um erro, sua senha não foi alterada.</string>
     <string name="title_alterar_dados">Alterar Dados</string>
@@ -100,6 +103,9 @@
     <string name="title_favs">Favoritos</string>
     <string name="button_state_no">Favoritar</string>
     <string name="button_state_yes">Favoritado</string>
+    <string name="button_navigate">Navegar</string>
+    <string name="field_erro_login">Para usar essa função\né necessário estar logado</string>
+    <string name="field_erro_empty_favorites">Nenhum contrato salvo!\nNavegue pelos contratos e favorite</string>
 
     /** Tela Licenças **/
     <string name="title_licencas">Licenças</string>

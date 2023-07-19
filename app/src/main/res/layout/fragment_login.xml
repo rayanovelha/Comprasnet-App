@@ -76,6 +76,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/glLogin" />
 
+        <ProgressBar
+            android:id="@+id/pbLogoLogin"
+            style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="95dp"
+            android:indeterminateDrawable="@drawable/ic_progress_bar"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/glLogin" />
+
         <TextView
             android:id="@+id/tvForgotPassword"
             style="?subtitleStyle"
@@ -137,6 +149,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout"
             style="?editTextLayoutStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
